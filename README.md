@@ -1,7 +1,7 @@
 # Courses
 All the courses finished and on-going
 
-CS61A UCB 
+CS61A UCB Spring2024
     Structure and Interpretation of Computer Programs
         started Apr 01 2024 
         
@@ -24,3 +24,12 @@ Project       3/4
     2 Cats 10/10
     3 Ants 12/12
     4 Scheme Interpreter 8/16  #come back when I need it
+
+CS61B UCB Spring2024
+    Data Structure
+        started Apr 19 2024
+
+Lab 1/10
+Homework 0.5/4
+Project 0/3
+
