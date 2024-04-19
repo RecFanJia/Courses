@@ -1,0 +1,24 @@
+GeoFa@DESKTOP-PUC06B1 MINGW64 /c/Git/repository/Courses/cs61b (main)
+$ curl -sS https://sp24.datastructur.es/labs/lab01/get-ssh-key.sh | bash
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+I couldn't find an existing SSH key for you, so let's make one now...
+Generating public/private ed25519 key pair.
+Created directory '/c/Users/GeoFa/.ssh'.
+Your identification has been saved in /c/Users/GeoFa/.ssh/id_ed25519
+Your public key has been saved in /c/Users/GeoFa/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:eJ6ZlMoY2A3Y7devtosTA8etLc10wHmhcbzG+mmJw6Y GeoFa@DESKTOP-PUC06B1
+The key's randomart image is:
++--[ED25519 256]--+
+|         ..oo.   |
+|   o .    ++o    |
+|  . o .. ..+ .   |
+|   o +..ooo =    |
+|  . o +oS*.+     |
+|     + *=+=.     |
+|    . o == o.o   |
+|        ..*.=    |
+|        E=+=     |
++----[SHA256]-----+
+Great! Your new SSH key is at: ~/.ssh/id_ed25519
+Make note of this, as you'll need this information later!
