@@ -1,0 +1,33 @@
+Youtube Channel: Jaohn Levine
+
+Uninformed Search
+
+Breadth First Search -Part I & II 
+(Shortest but not least costly)
+	https://www.youtube.com/watch?v=1wu2sojwsyQ
+	https://www.youtube.com/watch?v=n3fPL9q_Nyc
+
+
+Depth First Search
+(maybe the quickest， in terms of using of memory)
+	https://www.youtube.com/watch?v=h1RYvCfuoN4
+
+Uniformed Cost Search 
+(least costly)
+	https://www.youtube.com/watch?v=dRMvK76xQJI
+
+
+Informed Search
+
+A* Search
+(with evaluation function. find the optimal goal)
+	https://www.youtube.com/watch?v=6TsL96NAZCo
+
+Greedy best-first Search
+(highly depended on (with estimated score. find the optimal goal))
+
+Minimax
+Spanning Tree: https://www.youtube.com/watch?v=SLgZhpDsrfc
+
+Monte Carlo Tree Search 
+走歪的工程師James: https://www.youtube.com/watch?v=J3I3WaJei_E
