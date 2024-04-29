@@ -121,13 +121,13 @@ public class Model {
             for(int j = 0; j < size(); j++) {
                 if (tile(i, j) == null) {
                     return true;
-                }else if (i-1 >= 0 && tile(i-1, j).value() == tile(i, j).value()){
+                }else if (i-1 >= 0 && tile(i-1, j)!=null && tile(i-1, j).value() == tile(i, j).value()){
                     return true;
-                }else if (j-1 >= 0 && tile(i, j-1).value() == tile(i, j).value()){
+                }else if (j-1 >= 0 && tile(i, j-1)!=null && tile(i, j-1).value() == tile(i, j).value()){
                     return true;
-                }else if (i+1 < size() && tile(i+1, j).value() == tile(i, j).value()){
+                }else if (i+1 < size() && tile(i+1, j)!=null && tile(i+1, j).value() == tile(i, j).value()){
                     return true;
-                }else if (j+1 < size() && tile(i, j+1).value() == tile(i, j).value()){
+                }else if (j+1 < size() && tile(i, j+1)!=null && tile(i, j+1).value() == tile(i, j).value()){
                     return true;
                 }
             }
@@ -150,28 +150,32 @@ public class Model {
      *    and the trailing tile does not.
      */
     public void moveTileUpAsFarAsPossible(int x, int y) {
-        Tile currTile = board.tile(x, y);
-        int myValue = currTile.value();
-        int targetY = y;
         if (board.tile(x, y) == null) {
             return; // No tile at the current position, nothing to move.
         }
+        Tile currTile = board.tile(x, y);
+        int myValue = currTile.value();
+        int targetY = y;
+
         for (int i = y + 1; i < size(); i++) {
             Tile nextTile = board.tile(x, i);
             if (nextTile == null) {
                 targetY = i;
-                if(i+1==size()){board.move(x, targetY, currTile);}// Update the last empty position
-                continue; // Continue to see if there's a tile to merge further up
+                if(i+1==size()){
+                    board.move(x, targetY, currTile);
+                }// Update the last empty position
+                continue;
+                // Continue to see if there's a tile to merge further up
             }
             if (nextTile.value() == myValue && !nextTile.wasMerged()) {
                 // Merge tiles if they have the same value and the next tile hasn't merged
                 board.move(x, targetY+1, currTile);
                 score += 2*myValue; // Update score
             }
-            else{
+            else if(targetY != y){ //make sure it is moving
                 board.move(x, targetY, currTile);
-            } // Stop further checks as merge is complete
-            break; // Stop further checks as merge is complete
+            }
+            break;
         }
 
 
@@ -185,10 +189,18 @@ public class Model {
      * */
     public void tiltColumn(int x) {
         // TODO: Task 7. Fill in this function.
+        for (int i = size()-2; i >= 0; i--){
+            moveTileUpAsFarAsPossible(x,i);
+        }
     }
 
     public void tilt(Side side) {
         // TODO: Tasks 8 and 9. Fill in this function.
+        board.setViewingPerspective(side);
+        for (int i = size()-1; i >=0; i--){
+            tiltColumn(i);
+        }
+        board.setViewingPerspective(Side.NORTH);
     }
 
     /** Tilts every column of the board toward SIDE.
